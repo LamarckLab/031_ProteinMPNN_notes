@@ -8,7 +8,7 @@
 236 server上的路径: /data/lmk/ProteinMPNN/protein_mpnn_run.py
 ```
 
-*01  sample 1: 根据输入蛋白的主链结构（PDB），生成可能折叠成该结构的氨基酸序列*
+*01  sample 1: 根据输入蛋白的主链结构（单体设计），生成可能折叠成该结构的氨基酸序列*
 ```bash
 python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
   --pdb_path /data/lmk/mpnn_test/input.pdb \
@@ -49,6 +49,7 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 ```
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
