@@ -8,10 +8,14 @@
 236 server上的路径: /data/lmk/ProteinMPNN/protein_mpnn_run.py
 ```
 
-*01  sample 1: Design an unconditional monomer 无条件的单体设计*
+*01  sample 1: 根据输入蛋白的主链结构（PDB），生成可能折叠成该结构的氨基酸序列*
 ```bash
-/data/lmk/RFdiffusion/scripts/run_inference.py 'contigmap.contigs=[150-150]' inference.output_prefix=outputs_pdb/output inference.num_designs=3
-# 设计一个 150aa 的单体蛋白骨架，不附加其他结构或功能限制
+python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
+  --pdb_path /data/lmk/mpnn_test/input.pdb \
+  --out_folder /data/lmk/mpnn_test/output \
+  --model_name v_48_020 \
+  --num_seq_per_target 10 \
+  --sampling_temp 0.1
 ```
 
 *02  sample 2: Motif Scaffolding 蛋白基序的支架设计（在蛋白片段两端延伸骨架）*
@@ -45,6 +49,7 @@
 ```
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
