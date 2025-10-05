@@ -44,7 +44,8 @@
 
 ```
 
-##### [RFdiffusion官方文档](https://github.com/RosettaCommons/RFdiffusion)
+##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
