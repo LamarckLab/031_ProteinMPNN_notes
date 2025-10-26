@@ -13,11 +13,13 @@
 source activate lmk_proteinMPNN
 
 folder_with_pdbs="/data/lmk/mpnn_input/pdb/"
+output_dir="/data/lmk/mpnn_output/result"
 ```
 
 
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
