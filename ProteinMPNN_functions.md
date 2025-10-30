@@ -36,7 +36,7 @@ bash sample_1.sh
 ```
 folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input文件夹下存放所有输入pdb
 parsed_pdbs.jsonl记录一个输入结构的解析结果（链 ID、残基编号、坐标/掩码等元数据）
-
+assigned_pdbs.jsonl在解析基础上再写入" 哪些链设计、哪些链固定" 的分配信息。
 chains_to_design="A B" 表示把链 A 和 B 作为待设计链，其余链自动视作固定链
 ```
 ```bash
@@ -61,6 +61,7 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 ```
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
