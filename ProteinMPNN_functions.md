@@ -10,8 +10,6 @@
 
 *01  sample 1: 根据输入蛋白的主链结构（单体设计），生成可能折叠成该结构的氨基酸序列*
 ```bash
-source activate lmk_proteinMPNN
-
 folder_with_pdbs="/data/lmk/mpnn_input/pdb/"
 output_dir="/data/lmk/mpnn_output/result"
 
@@ -30,6 +28,7 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
