@@ -16,8 +16,8 @@ parsed_pdbs.jsonl通过parse_multiple_chains.py自动生成，作用是将原始
 ```bash
 folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input/"
 output_dir="/data/lmk/mpnn_doc/mpnn_output"
-
 path_for_parsed_chains=$output_dir"/parsed_pdbs.jsonl"
+
 python /data/lmk/ProteinMPNN/helper_scripts/parse_multiple_chains.py --input_path=$folder_with_pdbs --output_path=$path_for_parsed_chains
 
 python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
@@ -37,10 +37,28 @@ bash sample_1.sh
 
 ```
 ```bash
+folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input/"
+output_dir="/data/lmk/mpnn_doc/mpnn_output"
+path_for_parsed_chains=$output_dir"/parsed_pdbs.jsonl"
+path_for_assigned_chains=$output_dir"/assigned_pdbs.jsonl"
+chains_to_design="A B"
 
+python /data/lmk/ProteinMPNN/helper_scripts/parse_multiple_chains.py --input_path=$folder_with_pdbs --output_path=$path_for_parsed_chains
+
+python /data/lmk/ProteinMPNN/helper_scripts/assign_fixed_chains.py --input_path=$path_for_parsed_chains --output_path=$path_for_assigned_chains --chain_list "$chains_to_design"
+
+python ../protein_mpnn_run.py \
+        --jsonl_path $path_for_parsed_chains \
+        --chain_id_jsonl $path_for_assigned_chains \
+        --out_folder $output_dir \
+        --num_seq_per_target 2 \
+        --sampling_temp "0.1" \
+        --seed 37 \
+        --batch_size 1
 ```
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
