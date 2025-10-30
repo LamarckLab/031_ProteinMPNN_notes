@@ -11,7 +11,7 @@
 *01  sample 1: 简单单体设计 -- 最基础的入门脚本，只设计单条链，适合熟悉 ProteinMPNN 的输入输出格式。*
 ```
 /data/lmk/mpnn_doc/mpnn_input文件夹下存放所有输入pdb
-parsed_pdbs.jsonl通过parse_multiple_chains.py自动生成，作用是将原始的PDB文件结构信息转化成ProteinMPNN能直接理解的格式
+parsed_pdbs.jsonl通过parse_multiple_chains.py生成，作用是将原始的PDB文件结构信息转化成ProteinMPNN能直接理解的格式，记录一个输入结构的解析结果（链 ID、残基编号、坐标/掩码等元数据）
 ```
 ```bash
 folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input/"
@@ -61,6 +61,7 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 ```
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
