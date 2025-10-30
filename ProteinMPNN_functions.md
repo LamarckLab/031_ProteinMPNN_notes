@@ -10,8 +10,8 @@
 
 *01  sample 1: 单体设计 -- 根据输入蛋白的主链结构，生成可能折叠成该结构的氨基酸序列*
 ```
-/data/lmk/mpnn_doc/mpnn_input/ 文件夹下存放所有输入pdb
-
+/data/lmk/mpnn_doc/mpnn_input文件夹下存放所有输入pdb
+parsed_pdbs.jsonl通过parse_multiple_chains.py自动生成，作用是
 ```
 ```bash
 folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input/"
@@ -32,6 +32,7 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
