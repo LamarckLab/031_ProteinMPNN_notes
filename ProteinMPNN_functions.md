@@ -29,7 +29,7 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
         --batch_size 1
 ```
 ```bash
-bash sample01.sh
+bash sample_1.sh
 ```
 
 *02  sample 2: 多链复合物设计 -- 用于有多个蛋白链的复合物（如抗原-抗体、受体-配体），可选择固定部分链，只设计特定链。*
@@ -41,6 +41,7 @@ bash sample01.sh
 ```
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
