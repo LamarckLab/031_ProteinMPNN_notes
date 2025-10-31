@@ -263,7 +263,8 @@ bash sample_7.sh
 
 *09  sample 8: 引入氨基酸偏好 -- 可以调整模型生成时的氨基酸概率分布，即为模型添加氨基酸偏好，例如在表面鼓励疏水性残基或特定化学基团。*
 ```
-
+/data/lmk/mpnn_doc/mpnn_input 文件夹下存放所有输入pdb
+bias_pdbs.jsonl 记录氨基酸偏好信息
 ```
 ```bash
 folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input/"
@@ -271,8 +272,11 @@ output_dir="/data/lmk/mpnn_doc/mpnn_output"
 
 path_for_bias=$output_dir"/bias_pdbs.jsonl"
 
-AA_list="D E H K N Q R S T W Y"
-bias_list="1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39"
+AA_list="D E H K N Q R S T W Y" # 用单字母列出要偏置的氨基酸，这里是11种: D, E, H, K, N, Q, R, S, T, W, Y
+bias_list="1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39" # 与AA_list一一对应的偏置数值
+# 语义： 这是加入到模型输出logits上的加法偏置（log 概率偏移），正数=鼓励、负数=抑制、0=不变。
+# 量级直觉：1.39 ≈ ln(4)，等价于把这些氨基酸在采样时的相对几率提高约 4 倍。
+# tips: 
 
 python /data/lmk/ProteinMPNN/helper_scripts/make_bias_AA.py --output_path=$path_for_bias --AA_list="$AA_list" --bias_list="$bias_list"
 
@@ -292,6 +296,7 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 bash sample_8.sh
 ```
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
