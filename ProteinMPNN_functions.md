@@ -127,22 +127,38 @@ bash sample_4_1.sh
 ```
 
 *05  sample 4-2: 指定哪些残基参与设计 -- 与上一个相反，这次你指定哪些残基可以被设计，其余都保持固定，常用于探索性突变设计。*
-```
-
-```
 ```bash
 folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input/"
 output_dir="/data/lmk/mpnn_doc/mpnn_output"
 
+path_for_parsed_chains=$output_dir"/parsed_pdbs.jsonl"
+path_for_assigned_chains=$output_dir"/assigned_pdbs.jsonl"
+path_for_fixed_positions=$output_dir"/fixed_pdbs.jsonl"
 
+chains_to_design="A C"
 
+design_only_positions="1 2 3 4 5 6 7 8 9 10, 3 4 5 6 7 8" 
 
+python /data/lmk/ProteinMPNN/helper_scripts/parse_multiple_chains.py --input_path=$folder_with_pdbs --output_path=$path_for_parsed_chains
+python /data/lmk/ProteinMPNN/helper_scripts/assign_fixed_chains.py --input_path=$path_for_parsed_chains --output_path=$path_for_assigned_chains --chain_list "$chains_to_design"
+python /data/lmk/ProteinMPNN/helper_scripts/make_fixed_positions_dict.py --input_path=$path_for_parsed_chains --output_path=$path_for_fixed_positions --chain_list "$chains_to_design" --position_list "$design_only_positions" --specify_non_fixed
+
+python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
+        --jsonl_path $path_for_parsed_chains \
+        --chain_id_jsonl $path_for_assigned_chains \
+        --fixed_positions_jsonl $path_for_fixed_positions \
+        --out_folder $output_dir \
+        --num_seq_per_target 2 \
+        --sampling_temp "0.1" \
+        --seed 37 \
+        --batch_size 1
 ```
 ```bash
-
+bash sample_4_2.sh
 ```
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
