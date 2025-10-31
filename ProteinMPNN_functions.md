@@ -271,16 +271,15 @@ folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input/"
 output_dir="/data/lmk/mpnn_doc/mpnn_output"
 
 path_for_bias=$output_dir"/bias_pdbs.jsonl"
+path_for_parsed_chains=$output_dir"/parsed_pdbs.jsonl"
 
 AA_list="D E H K N Q R S T W Y" # 用单字母列出要偏置的氨基酸，这里是11种: D, E, H, K, N, Q, R, S, T, W, Y
 bias_list="1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39" # 与AA_list一一对应的偏置数值
 # 语义： 这是加入到模型输出logits上的加法偏置（log 概率偏移），正数=鼓励、负数=抑制、0=不变。
 # 量级直觉：1.39 ≈ ln(4)，等价于把这些氨基酸在采样时的相对几率提高约 4 倍。
-# tips: 
+# tips: (1)如果你想全局偏好芳香族，就列出 F W Y; (2)如果想强烈抑制某类（比如 C 防止二硫键），可给 -2.0 之类的负偏置; (3)若想不改动就别把该氨基酸放入列表，或给 0;
 
 python /data/lmk/ProteinMPNN/helper_scripts/make_bias_AA.py --output_path=$path_for_bias --AA_list="$AA_list" --bias_list="$bias_list"
-
-path_for_parsed_chains=$output_dir"/parsed_pdbs.jsonl"
 python /data/lmk/ProteinMPNN/helper_scripts/parse_multiple_chains.py --input_path=$folder_with_pdbs --output_path=$path_for_parsed_chains
 
 python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
@@ -296,105 +295,6 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 bash sample_8.sh
 ```
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
