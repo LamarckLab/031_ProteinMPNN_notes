@@ -168,6 +168,17 @@ bash sample_4_2.sh
 
 ```
 ```bash
+folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input/"
+output_dir="/data/lmk/mpnn_doc/mpnn_output"
+
+path_for_parsed_chains=$output_dir"/parsed_pdbs.jsonl"
+path_for_assigned_chains=$output_dir"/assigned_pdbs.jsonl"
+path_for_fixed_positions=$output_dir"/fixed_pdbs.jsonl"
+path_for_tied_positions=$output_dir"/tied_pdbs.jsonl"
+chains_to_design="A C"
+
+
+
 
 ```
 ```bash
@@ -175,6 +186,7 @@ bash sample_4_2.sh
 ```
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
