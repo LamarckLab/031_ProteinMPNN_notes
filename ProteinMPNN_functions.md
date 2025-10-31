@@ -163,7 +163,7 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 bash sample_4_2.sh
 ```
 
-*06  sample 5: 对称性设计 -- 让多个位置共享同一氨基酸类型，用于二聚体、三聚体等对称性结构设计。*
+*06  sample 5: 对称性设计 -- 把多个残基绑定在一起，使它们使用相同的氨基酸类型，用于对称多聚体、重复结构、或功能相关位点的协同设计。*
 ```
 folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input 文件夹下存放所有输入pdb
 folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input 文件夹下存放所有输入pdb
@@ -207,6 +207,7 @@ bash sample_5.sh
 ```
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
