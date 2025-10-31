@@ -72,7 +72,7 @@ path_to_PDB="/data/lmk/mpnn_doc/mpnn_input/3HTN.pdb"
 
 chains_to_design="A B"
 
-python ../protein_mpnn_run.py \
+python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
         --pdb_path $path_to_PDB \
         --pdb_path_chains "$chains_to_design" \
         --out_folder $output_dir \
@@ -86,6 +86,7 @@ python ../protein_mpnn_run.py \
 ```
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
