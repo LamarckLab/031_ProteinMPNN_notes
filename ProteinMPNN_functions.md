@@ -206,7 +206,18 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 bash sample_5.sh
 ```
 
+*07  sample 6: 同源寡聚体设计 -- 用于对称重复单元的设计（如 C2、C3、C4 对称复合物），结合对称性约束，会在多条链之间共享序列信息，实现对称序列生成。*
+```
+
+```
+```bash
+
+```
+```bash
+
+```
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
