@@ -266,12 +266,33 @@ bash sample_7.sh
 
 ```
 ```bash
+folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input/"
+output_dir="/data/lmk/mpnn_doc/mpnn_output"
 
+path_for_bias=$output_dir"/bias_pdbs.jsonl"
+
+AA_list="D E H K N Q R S T W Y"
+bias_list="1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39"
+
+python /data/lmk/ProteinMPNN/helper_scripts/make_bias_AA.py --output_path=$path_for_bias --AA_list="$AA_list" --bias_list="$bias_list"
+
+path_for_parsed_chains=$output_dir"/parsed_pdbs.jsonl"
+python /data/lmk/ProteinMPNN/helper_scripts/parse_multiple_chains.py --input_path=$folder_with_pdbs --output_path=$path_for_parsed_chains
+
+python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
+        --jsonl_path $path_for_parsed_chains \
+        --out_folder $output_dir \
+        --bias_AA_jsonl $path_for_bias \
+        --num_seq_per_target 2 \
+        --sampling_temp "0.1" \
+        --seed 37 \
+        --batch_size 1
 ```
 ```bash
-
+bash sample_8.sh
 ```
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
