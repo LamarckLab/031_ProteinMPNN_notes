@@ -83,10 +83,11 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
         --batch_size 1
 ```
 ```bash
-
+bash sample_3.sh
 ```
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
