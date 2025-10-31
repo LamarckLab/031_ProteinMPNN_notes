@@ -127,6 +127,12 @@ bash sample_4_1.sh
 ```
 
 *05  sample 4-2: 指定哪些残基参与设计 -- 与上一个相反，这次你指定哪些残基可以被设计，其余都保持固定，常用于探索性突变设计。*
+```
+folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input 文件夹下存放所有输入pdb
+parsed_pdbs.jsonl 记录一个输入结构的解析结果（链 ID、残基编号、坐标/掩码等元数据）
+assigned_pdbs.jsonl 在解析基础上再写入" 哪些链设计、哪些链固定" 的分配信息
+fixed_pdbs.jsonl 指定哪些残基位置需要固定（即不被设计）
+```
 ```bash
 folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input/"
 output_dir="/data/lmk/mpnn_doc/mpnn_output"
@@ -158,6 +164,7 @@ bash sample_4_2.sh
 ```
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
