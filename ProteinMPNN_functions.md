@@ -86,7 +86,7 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 bash sample_3.sh
 ```
 
-*04  sample 4: 允许指定某些残基不参与设计 -- 部分氨基酸保持原序列不变，只在其他位置重新设计,如固定活性位点、金属配位残基、抗原表位等。*
+*04  sample 4-1: 指定哪些残基不参与设计 -- 部分氨基酸保持原序列不变，只在其他位置重新设计,如固定活性位点、金属配位残基、抗原表位等。*
 ```
 folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input 文件夹下存放所有输入pdb
 parsed_pdbs.jsonl 记录一个输入结构的解析结果（链 ID、残基编号、坐标/掩码等元数据）
@@ -126,7 +126,19 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 bash sample_4.sh
 ```
 
+*05  sample 4-2: 指定哪些残基参与设计 -- 与上一个相反，这次你指定哪些残基可以被设计，其余都保持固定，常用于探索性突变设计。*
+```
+
+```
+```bash
+
+```
+```bash
+
+```
+
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
