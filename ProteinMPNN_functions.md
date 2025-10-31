@@ -91,6 +91,9 @@ bash sample_3.sh
 
 ```
 ```bash
+folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input/"
+
+
 
 ```
 ```bash
@@ -98,6 +101,7 @@ bash sample_3.sh
 ```
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
