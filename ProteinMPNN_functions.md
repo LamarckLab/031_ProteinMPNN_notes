@@ -69,6 +69,7 @@ bash sample_2.sh
 ```
 ```bash
 path_to_PDB="/data/lmk/mpnn_doc/mpnn_input/3HTN.pdb"
+output_dir="/data/lmk/mpnn_doc/mpnn_output"
 
 chains_to_design="A B"
 
@@ -86,6 +87,7 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 ```
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
