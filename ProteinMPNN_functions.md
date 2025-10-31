@@ -211,12 +211,30 @@ bash sample_5.sh
 
 ```
 ```bash
+folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input/"
+output_dir="/data/lmk/mpnn_doc/mpnn_output"
 
+path_for_parsed_chains=$output_dir"/parsed_pdbs.jsonl"
+path_for_tied_positions=$output_dir"/tied_pdbs.jsonl"
+path_for_designed_sequences=$output_dir"/temp_0.1"
+
+python /data/lmk/ProteinMPNN/helper_scripts/parse_multiple_chains.py --input_path=$folder_with_pdbs --output_path=$path_for_parsed_chains
+python /data/lmk/ProteinMPNN/helper_scripts/make_tied_positions_dict.py --input_path=$path_for_parsed_chains --output_path=$path_for_tied_positions --homooligomer 1
+
+python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
+        --jsonl_path $path_for_parsed_chains \
+        --tied_positions_jsonl $path_for_tied_positions \
+        --out_folder $output_dir \
+        --num_seq_per_target 2 \
+        --sampling_temp "0.2" \
+        --seed 37 \
+        --batch_size 1
 ```
 ```bash
-
+bash sample_6.sh
 ```
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
