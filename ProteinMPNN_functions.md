@@ -131,6 +131,11 @@ bash sample_4_1.sh
 
 ```
 ```bash
+folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input/"
+output_dir="/data/lmk/mpnn_doc/mpnn_output"
+
+
+
 
 ```
 ```bash
@@ -138,6 +143,7 @@ bash sample_4_1.sh
 ```
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
