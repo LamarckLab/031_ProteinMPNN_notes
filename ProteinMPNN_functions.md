@@ -165,7 +165,12 @@ bash sample_4_2.sh
 
 *06  sample 5: 对称性设计 -- 让多个位置共享同一氨基酸类型，用于二聚体、三聚体等对称性结构设计。*
 ```
-
+folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input 文件夹下存放所有输入pdb
+folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input 文件夹下存放所有输入pdb
+parsed_pdbs.jsonl 记录一个输入结构的解析结果（链 ID、残基编号、坐标/掩码等元数据）
+assigned_pdbs.jsonl 在解析基础上再写入" 哪些链设计、哪些链固定" 的分配信息
+fixed_pdbs.jsonl 指定哪些残基位置需要固定（即不被设计）
+tied_pdbs.jsonl 保存绑定位点（即必须一起设计的残基位置）
 ```
 ```bash
 folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input/"
@@ -179,7 +184,7 @@ path_for_tied_positions=$output_dir"/tied_pdbs.jsonl"
 chains_to_design="A C"
 
 fixed_positions="9 10 11 12 13 14 15 16 17 18 19 20 21 22 23, 10 11 18 19 20 22"
-tied_positions="1 2 3 4 5 6 7 8, 1 2 3 4 5 6 7 8" #two list must match in length; residue 1 in chain A and C will be sampled togther;
+tied_positions="1 2 3 4 5 6 7 8, 1 2 3 4 5 6 7 8" #指定哪些位置是绑定的，也就是必须一起设计和变动的残基，两个链中对应的残基会同步变动
 
 python /data/lmk/ProteinMPNN/helper_scripts/parse_multiple_chains.py --input_path=$folder_with_pdbs --output_path=$path_for_parsed_chains
 python /data/lmk/ProteinMPNN/helper_scripts/assign_fixed_chains.py --input_path=$path_for_parsed_chains --output_path=$path_for_assigned_chains --chain_list "$chains_to_design"
@@ -198,10 +203,11 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
         --batch_size 1
 ```
 ```bash
-
+bash sample_5.sh
 ```
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
