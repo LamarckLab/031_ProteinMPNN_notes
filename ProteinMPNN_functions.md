@@ -63,7 +63,7 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 bash sample_2.sh
 ```
 
-*03  sample 3: 多链复合物设计 -- 用于有多个蛋白链的复合物（如抗原-抗体、受体-配体），可选择固定部分链，只设计特定链。*
+*03  sample 3: 直接从 PDB 路径读取结构设计 -- 不需要先解析成 .jsonl 文件，可以直接用 PDB 文件路径运行。方便快速测试单个 PDB 文件。*
 ```
 
 ```
@@ -75,6 +75,7 @@ bash sample_2.sh
 ```
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
