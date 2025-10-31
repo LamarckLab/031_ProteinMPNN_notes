@@ -166,7 +166,6 @@ bash sample_4_2.sh
 *06  sample 5: 对称性设计 -- 把多个残基绑定在一起，使它们使用相同的氨基酸类型，用于对称多聚体、重复结构、或功能相关位点的协同设计。*
 ```
 folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input 文件夹下存放所有输入pdb
-folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input 文件夹下存放所有输入pdb
 parsed_pdbs.jsonl 记录一个输入结构的解析结果（链 ID、残基编号、坐标/掩码等元数据）
 assigned_pdbs.jsonl 在解析基础上再写入" 哪些链设计、哪些链固定" 的分配信息
 fixed_pdbs.jsonl 指定哪些残基位置需要固定（即不被设计）
@@ -208,7 +207,9 @@ bash sample_5.sh
 
 *07  sample 6: 同源寡聚体设计 -- 用于对称重复单元的设计（如 C2、C3、C4 对称复合物），结合对称性约束，会在多条链之间共享序列信息，实现对称序列生成。*
 ```
-
+folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input 文件夹下存放所有输入pdb
+parsed_pdbs.jsonl 记录一个输入结构的解析结果（链 ID、残基编号、坐标/掩码等元数据）
+fixed_pdbs.jsonl 指定哪些残基位置需要固定（即不被设计）
 ```
 ```bash
 folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input/"
@@ -234,6 +235,7 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 bash sample_6.sh
 ```
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
