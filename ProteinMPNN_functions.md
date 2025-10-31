@@ -86,7 +86,31 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 bash sample_3.sh
 ```
 
+*04  sample 4: 允许指定某些残基不参与设计 -- 部分氨基酸保持原序列不变，只在其他位置重新设计,如固定活性位点、金属配位残基、抗原表位等。*
+```
+/data/lmk/mpnn_doc/mpnn_input/3HTN.pdb 是需要设计的pdb路径
+```
+```bash
+path_to_PDB="/data/lmk/mpnn_doc/mpnn_input/3HTN.pdb"
+output_dir="/data/lmk/mpnn_doc/mpnn_output"
+
+chains_to_design="A B"
+
+python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
+        --pdb_path $path_to_PDB \
+        --pdb_path_chains "$chains_to_design" \
+        --out_folder $output_dir \
+        --num_seq_per_target 2 \
+        --sampling_temp "0.1" \
+        --seed 37 \
+        --batch_size 1
+```
+```bash
+bash sample_3.sh
+```
+
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
