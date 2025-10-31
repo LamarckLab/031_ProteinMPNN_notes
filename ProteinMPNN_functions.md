@@ -59,8 +59,12 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
         --seed 37 \
         --batch_size 1
 ```
+```bash
+bash sample_2.sh
+```
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
