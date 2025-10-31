@@ -234,7 +234,19 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 ```bash
 bash sample_6.sh
 ```
+
+*08  sample 7: 输出无条件概率 -- 不生成确定序列，而输出每个位置上 20 个氨基酸的概率分布，相当于一个「模型内部的 PSSM」，用于统计分析或后续能量计算。*
+```
+
+```
+```bash
+
+```
+```bash
+
+```
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
