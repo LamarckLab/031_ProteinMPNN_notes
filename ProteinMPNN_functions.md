@@ -10,7 +10,7 @@
 
 *01  sample 1: 简单单体设计 -- 最基础的入门脚本，只设计单条链，适合熟悉 ProteinMPNN 的输入输出格式。*
 ```
-/data/lmk/mpnn_doc/mpnn_input文件夹下存放所有输入pdb
+/data/lmk/mpnn_doc/mpnn_input 文件夹下存放所有输入pdb
 parsed_pdbs.jsonl通过parse_multiple_chains.py生成，作用是将原始的PDB文件结构信息转化成ProteinMPNN能直接理解的格式，记录一个输入结构的解析结果（链 ID、残基编号、坐标/掩码等元数据）
 ```
 ```bash
@@ -34,7 +34,7 @@ bash sample_1.sh
 
 *02  sample 2: 多链复合物设计 -- 用于有多个蛋白链的复合物（如抗原-抗体、受体-配体），可选择固定部分链，只设计特定链。*
 ```
-folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input文件夹下存放所有输入pdb
+folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input 文件夹下存放所有输入pdb
 parsed_pdbs.jsonl 记录一个输入结构的解析结果（链 ID、残基编号、坐标/掩码等元数据）
 assigned_pdbs.jsonl 在解析基础上再写入" 哪些链设计、哪些链固定" 的分配信息
 chains_to_design="A B" 表示把链A和B作为待设计链，其余链自动视作固定链
@@ -88,7 +88,10 @@ bash sample_3.sh
 
 *04  sample 4: 允许指定某些残基不参与设计 -- 部分氨基酸保持原序列不变，只在其他位置重新设计,如固定活性位点、金属配位残基、抗原表位等。*
 ```
-
+folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input 文件夹下存放所有输入pdb
+parsed_pdbs.jsonl 记录一个输入结构的解析结果（链 ID、残基编号、坐标/掩码等元数据）
+assigned_pdbs.jsonl 在解析基础上再写入" 哪些链设计、哪些链固定" 的分配信息
+fixed_pdbs.jsonl 指定哪些残基位置需要固定（即不被设计）
 ```
 ```bash
 folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input/"
@@ -124,6 +127,7 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 ```
 
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
