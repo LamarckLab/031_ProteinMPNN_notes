@@ -237,15 +237,31 @@ bash sample_6.sh
 
 *08  sample 7: 输出无条件概率 -- 不生成确定序列，而输出每个位置上 20 个氨基酸的概率分布，相当于一个「模型内部的 PSSM」，用于统计分析或后续能量计算。*
 ```
-
+/data/lmk/mpnn_doc/mpnn_input 文件夹下存放所有输入pdb
+parsed_pdbs.jsonl 记录一个输入结构的解析结果（链 ID、残基编号、坐标/掩码等元数据）
 ```
 ```bash
+folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input/"
+output_dir="/data/lmk/mpnn_doc/mpnn_output"
 
+path_for_parsed_chains=$output_dir"/parsed_pdbs.jsonl"
+
+python /data/lmk/ProteinMPNN/helper_scripts/parse_multiple_chains.py --input_path=$folder_with_pdbs --output_path=$path_for_parsed_chains
+
+python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
+        --jsonl_path $path_for_parsed_chains \
+        --out_folder $output_dir \
+        --num_seq_per_target 1 \
+        --sampling_temp "0.1" \
+        --unconditional_probs_only 1 \
+        --seed 37 \
+        --batch_size 1
 ```
 ```bash
-
+bash sample_7.sh
 ```
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
