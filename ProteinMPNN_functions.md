@@ -260,7 +260,19 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 ```bash
 bash sample_7.sh
 ```
+
+*09  sample 8: 引入氨基酸偏好 -- 可以调整模型生成时的氨基酸概率分布，即为模型添加氨基酸偏好，例如在表面鼓励疏水性残基或特定化学基团。*
+```
+
+```
+```bash
+
+```
+```bash
+
+```
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
