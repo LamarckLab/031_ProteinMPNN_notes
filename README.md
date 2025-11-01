@@ -36,12 +36,12 @@ conda activate lmk_proteinMPNN
 
 | 示例编号 | 功能类型 | 输入文件 | 输出文件 | 关键脚本 |
 |:--:|:--|:--|:--|:--|
-| **01** | 🧩 简单单体设计 | `.pdb` | `.fa`, `parsed_pdbs.jsonl` | `parse_multiple_chains.py`, `protein_mpnn_run.py` |
-| **02** | 🔗 多链复合物设计 | `.pdb` | `.fa`, `assigned_pdbs.jsonl` | `assign_fixed_chains.py` |
-| **03** | ⚡ 直接路径输入设计 | `.pdb` | `.fa` | `protein_mpnn_run.py` |
-| **04-1** | 🧱 固定残基不设计 | `.pdb` | `.fa`, `fixed_pdbs.jsonl` | `make_fixed_positions_dict.py` |
-| **04-2** | 🧬 仅设计指定残基 | `.pdb` | `.fa`, `fixed_pdbs.jsonl` | `make_fixed_positions_dict.py (--specify_non_fixed)` |
-| **05** | 🔁 对称性设计 | `.pdb` | `.fa`, `tied_pdbs.jsonl`, `fixed_pdbs.jsonl` | `make_tied_positions_dict.py` |
-| **06** | 🧫 同源寡聚体设计 | `.pdb` | `.fa`, `tied_pdbs.jsonl` | `make_tied_positions_dict.py (--homooligomer 1)` |
-| **07** | 📊 输出氨基酸概率 | `.pdb` | `.npz`（包含概率张量） | `protein_mpnn_run.py (--unconditional_probs_only 1)` |
-| **08** | 🎯 氨基酸偏置设计 | `.pdb` | `.fa`, `bias_pdbs.jsonl` | `make_bias_AA.py` |
+| **01** | 简单单体设计 | `.pdb` | `.fa`, `parsed_pdbs.jsonl` | `parse_multiple_chains.py`, `protein_mpnn_run.py` |
+| **02** | 多链复合物设计 | `.pdb` | `.fa`, `assigned_pdbs.jsonl` | `assign_fixed_chains.py` |
+| **03** | 直接路径输入设计 | `.pdb` | `.fa` | `protein_mpnn_run.py` |
+| **04-1** | 固定残基不设计 | `.pdb` | `.fa`, `fixed_pdbs.jsonl` | `make_fixed_positions_dict.py` |
+| **04-2** | 仅设计指定残基 | `.pdb` | `.fa`, `fixed_pdbs.jsonl` | `make_fixed_positions_dict.py (--specify_non_fixed)` |
+| **05** | 对称性设计 | `.pdb` | `.fa`, `tied_pdbs.jsonl`, `fixed_pdbs.jsonl` | `make_tied_positions_dict.py` |
+| **06** | 同源寡聚体设计 | `.pdb` | `.fa`, `tied_pdbs.jsonl` | `make_tied_positions_dict.py (--homooligomer 1)` |
+| **07** | 输出氨基酸概率 | `.pdb` | `.npz`（包含概率张量） | `protein_mpnn_run.py (--unconditional_probs_only 1)` |
+| **08** | 氨基酸偏置设计 | `.pdb` | `.fa`, `bias_pdbs.jsonl` | `make_bias_AA.py` |
