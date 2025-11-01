@@ -62,7 +62,7 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 bash sample_2.sh
 ```
 
-*03  sample 3: 直接从 PDB 路径读取结构设计 -- 不需要先解析成 .jsonl 文件，可以直接用 PDB 文件路径运行，方便快速测试单个 PDB 文件。*
+*03  sample 3: 直接从PDB路径读取结构设计 -- 不需要先解析成.jsonl文件，可以直接用PDB文件路径运行，方便快速测试单个PDB文件。*
 ```
 /data/lmk/mpnn_doc/mpnn_input/3HTN.pdb 是需要设计的pdb路径
 ```
@@ -294,6 +294,7 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 bash sample_8.sh
 ```
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
