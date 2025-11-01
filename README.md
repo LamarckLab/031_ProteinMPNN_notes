@@ -1,5 +1,3 @@
-# 031_ProteinMPNN_notes
-
 <h1 align="center">🧬 ProteinMPNN 全功能复现与实战指南</h1>
 
 <p align="center">
