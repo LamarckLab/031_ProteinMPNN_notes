@@ -1,7 +1,7 @@
 <h1 align="center">🧬 ProteinMPNN 配置和功能相关的笔记</h1>
 
 <p align="center">
-  <i> —— Lamarck 2025.11.1</i>
+  <i> —— 2025.11.1</i>
 </p>
 
 <p align="center">
