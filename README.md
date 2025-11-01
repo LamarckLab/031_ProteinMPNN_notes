@@ -1,7 +1,7 @@
-<h1 align="center">🧬 ProteinMPNN 全功能复现与实战指南</h1>
+<h1 align="center">🧬 ProteinMPNN 配置和功能相关的笔记</h1>
 
 <p align="center">
-  <i>完整复现并注释 ProteinMPNN 官方文档的全部示例脚本</i>
+  <i> —— Lamarck </i>
 </p>
 
 <p align="center">
