@@ -163,7 +163,7 @@ bash sample_4_2.sh
 
 *06  sample 5: 对称性设计 -- 把多个残基绑定在一起，使它们使用相同的氨基酸类型，用于对称多聚体、重复结构、或功能相关位点的协同设计。*
 ```
-folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input 文件夹下存放所有输入pdb
+/data/lmk/mpnn_doc/mpnn_input 文件夹下存放所有输入pdb
 parsed_pdbs.jsonl 记录一个输入结构的解析结果（链 ID、残基编号、坐标/掩码等元数据）
 assigned_pdbs.jsonl 在解析基础上再写入" 哪些链设计、哪些链固定" 的分配信息
 fixed_pdbs.jsonl 指定哪些残基位置需要固定（即不被设计）
@@ -203,9 +203,9 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 bash sample_5.sh
 ```
 
-*07  sample 6: 同源寡聚体设计 -- 用于对称重复单元的设计（如 C2、C3、C4 对称复合物），结合对称性约束，会在多条链之间共享序列信息，实现对称序列生成。*
+*07  sample 6: 同源寡聚体设计 -- 用于对称重复单元的设计（如C2、C3、C4对称复合物），结合对称性约束，会在多条链之间共享序列信息，实现对称序列生成。*
 ```
-folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input 文件夹下存放所有输入pdb
+/data/lmk/mpnn_doc/mpnn_input 文件夹下存放所有输入pdb
 parsed_pdbs.jsonl 记录一个输入结构的解析结果（链 ID、残基编号、坐标/掩码等元数据）
 fixed_pdbs.jsonl 指定哪些残基位置需要固定（即不被设计）
 ```
@@ -271,11 +271,11 @@ output_dir="/data/lmk/mpnn_doc/mpnn_output"
 path_for_bias=$output_dir"/bias_pdbs.jsonl"
 path_for_parsed_chains=$output_dir"/parsed_pdbs.jsonl"
 
-AA_list="D E H K N Q R S T W Y" # 用单字母列出要偏置的氨基酸，这里是11种: D, E, H, K, N, Q, R, S, T, W, Y
-bias_list="1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39" # 与AA_list一一对应的偏置数值
-# 语义： 这是加入到模型输出logits上的加法偏置（log 概率偏移），正数=鼓励、负数=抑制、0=不变。
-# 量级直觉：1.39 ≈ ln(4)，等价于把这些氨基酸在采样时的相对几率提高约 4 倍。
-# tips: (1)如果你想全局偏好芳香族，就列出 F W Y; (2)如果想强烈抑制某类（比如 C 防止二硫键），可给 -2.0 之类的负偏置; (3)若想不改动就别把该氨基酸放入列表，或给 0;
+AA_list="D E H K N Q R S T W Y"  # 用单字母列出要偏置的氨基酸，这里是11种: D, E, H, K, N, Q, R, S, T, W, Y
+bias_list="1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39 1.39"  # 与AA_list一一对应的偏置数值
+# 语义: 这是加入到模型输出logits上的加法偏置（log 概率偏移），正数=鼓励、负数=抑制、0=不变。
+# 量级直觉: 1.39 ≈ ln(4)，等价于把这些氨基酸在采样时的相对几率提高约 4 倍。
+# tips: (1)如果你想全局偏好芳香族，就列出 F W Y; (2)如果想强烈抑制某类（比如 C 防止二硫键），可给 -2.0 之类的负偏置; (3)若想不改动就别把该氨基酸放入列表，或给0;
 
 python /data/lmk/ProteinMPNN/helper_scripts/make_bias_AA.py --output_path=$path_for_bias --AA_list="$AA_list" --bias_list="$bias_list"
 python /data/lmk/ProteinMPNN/helper_scripts/parse_multiple_chains.py --input_path=$folder_with_pdbs --output_path=$path_for_parsed_chains
@@ -293,6 +293,7 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 bash sample_8.sh
 ```
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
