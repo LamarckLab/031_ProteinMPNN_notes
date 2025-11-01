@@ -13,7 +13,7 @@
 
 ---
 
-## 🧪 环境配置
+## 🧪 Environment Configuration
 
 ```bash
 # Conda 环境
@@ -29,7 +29,7 @@ conda activate lmk_proteinMPNN
 
 ---
 
-## 🧱 功能目录 (Feature Overview)
+## 🧱 Feature Overview
 
 > 该部分总结了仓库中每个示例脚本的功能、主要输入输出、适用场景与关键脚本文件。  
 > 每个示例脚本 (`sample_X.sh`) 都可在 Linux 环境下直接运行。
