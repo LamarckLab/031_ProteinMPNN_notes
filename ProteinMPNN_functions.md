@@ -34,20 +34,19 @@ bash sample_1.sh
 
 *02  sample 2: 多链复合物设计 -- 用于有多个蛋白链的复合物（如抗原-抗体、受体-配体），可选择固定部分链，只设计特定链。*
 ```
-folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input 文件夹下存放所有输入pdb
+/data/lmk/mpnn_doc/mpnn_input 文件夹下存放所有输入pdb
 parsed_pdbs.jsonl 记录一个输入结构的解析结果（链 ID、残基编号、坐标/掩码等元数据）
 assigned_pdbs.jsonl 在解析基础上再写入" 哪些链设计、哪些链固定" 的分配信息
-chains_to_design="A B" 表示把链A和B作为待设计链，其余链自动视作固定链
 ```
 ```bash
 folder_with_pdbs="/data/lmk/mpnn_doc/mpnn_input/"
 output_dir="/data/lmk/mpnn_doc/mpnn_output"
 path_for_parsed_chains=$output_dir"/parsed_pdbs.jsonl"
 path_for_assigned_chains=$output_dir"/assigned_pdbs.jsonl"
-chains_to_design="A B"
+
+chains_to_design="A B"  # 表示把链A和B作为待设计链，其余链自动视作固定链
 
 python /data/lmk/ProteinMPNN/helper_scripts/parse_multiple_chains.py --input_path=$folder_with_pdbs --output_path=$path_for_parsed_chains
-
 python /data/lmk/ProteinMPNN/helper_scripts/assign_fixed_chains.py --input_path=$path_for_parsed_chains --output_path=$path_for_assigned_chains --chain_list "$chains_to_design"
 
 python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
@@ -295,6 +294,7 @@ python /data/lmk/ProteinMPNN/protein_mpnn_run.py \
 bash sample_8.sh
 ```
 ##### [ProteinMPNN官方文档](https://github.com/dauparas/ProteinMPNN)
+
 
 
 
